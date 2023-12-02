@@ -1,12 +1,13 @@
-import { Wrapper, Image } from "./styled";
+import { Image, Wrapper, Container, Left, Right, Centered } from "./styled";
 import PlayerScene1 from "#assets/horse_1.png";
 import PlayerScene2 from "#assets/horse_2.png";
 import PlayerScene3 from "#assets/horse_3.png";
 import { useEffect, useState } from "react";
+import { Position } from "#types/game";
 
 const playerImages = [PlayerScene1, PlayerScene2, PlayerScene3];
 
-export function Player() {
+export function Player({ position }: { position: Position }) {
   const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
 
   useEffect(() => {
@@ -18,9 +19,17 @@ export function Player() {
     return () => clearInterval(animation);
   }, [currentSceneIndex]);
 
+  const getPlayerPositionStyles = () => {
+    if (position === 0) return Left;
+    if (position === 2) return Right;
+    return Centered;
+  };
+
   return (
-    <Wrapper>
-      <Image src={playerImages[currentSceneIndex]} />
+    <Wrapper className={getPlayerPositionStyles()}>
+      <Container>
+        <Image src={playerImages[currentSceneIndex]} />
+      </Container>
     </Wrapper>
   );
 }
