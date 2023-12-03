@@ -9,5 +9,4 @@ export type CoinType = {
   id: number;
   position: Position;
   speed: number;
-  timeToCollapse: number;
 };

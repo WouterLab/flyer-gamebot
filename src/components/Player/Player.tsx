@@ -26,9 +26,9 @@ export function Player({ position }: { position: Position }) {
   };
 
   return (
-    <Wrapper className={getPlayerPositionStyles()}>
-      <Container>
-        <Image src={playerImages[currentSceneIndex]} />
+    <Wrapper className={getPlayerPositionStyles()} onSelect={() => false}>
+      <Container onSelect={() => false}>
+        <Image src={playerImages[currentSceneIndex]} onSelect={() => false} />
       </Container>
     </Wrapper>
   );

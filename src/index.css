@@ -95,7 +95,7 @@ body,
 #root {
   height: 100%;
   font-family: "Montserrat", sans-serif;
-  overflow: auto;
+  overflow: hidden;
   background-color: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
