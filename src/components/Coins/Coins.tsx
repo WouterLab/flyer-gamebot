@@ -20,7 +20,7 @@ export const Coins = memo(function Coins({
   const [coinsArray, setCoinsArray] = useState<CoinType[]>([]);
   const [spawnTime, setSpawnTime] = useState(4000);
   const nextCoinId = useRef(1);
-  const currentSpeed = useRef(10000);
+  const currentSpeed = useRef(8000);
 
   useEffect(() => {
     const interval = setInterval(() => {
